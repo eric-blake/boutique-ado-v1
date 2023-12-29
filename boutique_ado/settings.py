@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-e2z(yx+j@5++)zrsar_w+)yc9=7)jr7mi64bt^=p5yz+743m$=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-eric-blake-boutique-ado-oxgw14jqvz.us2.codeanyapp.com']
+ALLOWED_HOSTS = ['8000-eric-blake-boutique-ado-vy860v6c5m.us2.codeanyapp.com']
 
 
 # Application definition
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'home',
 ]
 
 MIDDLEWARE = [
@@ -59,7 +60,11 @@ ROOT_URLCONF = 'boutique_ado.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+            os.path.join(BASE_DIR, 'templates', 'allauth'),
+
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
