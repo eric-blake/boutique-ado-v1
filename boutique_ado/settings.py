@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
 
 if os.path.isfile("env.py"):
     import env
@@ -27,9 +28,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-e2z(yx+j@5++)zrsar_w+)yc9=7)jr7mi64bt^=p5yz+743m$='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['8000-ericblake-boutiqueadov1-nfbqlyots3o.ws-eu107.gitpod.io']
+ALLOWED_HOSTS = ['8000-ericblake-boutiqueadov1-nfbqlyots3o.ws-eu107.gitpod.io', 'https://boutique-ado-eb-2ecdad62b1ef.herokuapp.com/']
 
 
 # Application definition
@@ -125,12 +126,20 @@ WSGI_APPLICATION = 'boutique_ado.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
+if 'DATABASE_URL' in os.environ:
+
+    DATABASES = {
+    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+     }
+else:
+    DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
-}
+    }
+
+    
 
 
 # Password validation
