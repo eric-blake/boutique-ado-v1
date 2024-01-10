@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
+from django.contrib.messages import constants as messages
 
 if os.path.isfile("env.py"):
     import env
@@ -30,9 +31,11 @@ development = os.environ.get('DEVELOPMENT', False)
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEVELOPMENT' in os.environ
+# DEBUG = 'DEVELOPMENT' in os.environ
+DEBUG = False
 
 ALLOWED_HOSTS = ['8000-ericblake-boutiqueadov1-nfbqlyots3o.ws-eu107.gitpod.io', 'https://boutique-ado-eb-2ecdad62b1ef.herokuapp.com/', 'localhost']
+
 X_FRAME_OPTIONS = 'SAMEORIGIN' 
 
 
@@ -81,7 +84,6 @@ TEMPLATES = [
         'DIRS': [
             os.path.join(BASE_DIR, 'templates'),
             os.path.join(BASE_DIR, 'templates', 'allauth'),
-
         ],
         'APP_DIRS': True,
         'OPTIONS': {
