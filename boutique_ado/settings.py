@@ -32,7 +32,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['8000-ericblake-boutiqueadov1-nfbqlyots3o.ws-eu107.gitpod.io', 'https://boutique-ado-eb-2ecdad62b1ef.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['8000-ericblake-boutiqueadov1-nfbqlyots3o.ws-eu107.gitpod.io', 'https://boutique-ado-eb-2ecdad62b1ef.herokuapp.com/', 'localhost']
 X_FRAME_OPTIONS = 'SAMEORIGIN' 
 
 
