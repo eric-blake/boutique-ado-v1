@@ -34,7 +34,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # DEBUG = 'DEVELOPMENT' in os.environ
 DEBUG = False
 
-ALLOWED_HOSTS = ['boutique-ado-eb-2ecdad62b1ef.herokuapp.com/', 'localhost']
+ALLOWED_HOSTS = ['boutique-ado-eb-2ecdad62b1ef.herokuapp.com', 'localhost']
 
 X_FRAME_OPTIONS = 'SAMEORIGIN' 
 
